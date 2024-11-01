@@ -1,0 +1,298 @@
+/* General styling */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header buttons */
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.header-buttons button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+
+}
+
+
+
+.home-btn {
+    background-color: #3498db;
+}
+.header-buttons button:hover {
+    opacity: 0.8;
+}
+.ajouter-achat-btn {
+    background-color: #27ae60;
+}
+
+.ajouter-vente-btn {
+    background-color: #e67e22;
+}
+.ajouter-fournisseur-btn {
+    background-color: #f0550d;
+}
+
+.btn-supprimer {
+    color: red;
+}
+
+.btn-supprimer:hover {
+    color: darkred;
+}
+.vente-btn {
+    background-color: #f1c40f;
+}
+
+.vente-btn:hover {
+    background-color: #bb9a14;
+}
+/* Table container styling */
+.table-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: auto;
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Form styling */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.form-container {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.form-container .product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.form-container .product-row label,
+.form-container .product-row input,
+.form-container .product-row select {
+    flex: 0.;
+}
+
+.form-container .product-row input {
+    margin: 0 5px;
+}
+
+.form-container .product-row button {
+    flex: 0;
+}
+
+.form-container input[type=text],
+.form-container input[type=number],
+.form-container input[type=date],
+.form-container select {
+    width: calc(100% - 24px); /* Adjusting the width */
+    padding: 10px;
+    margin: 5px 12px; /* Adjusting the margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f4f4f4;
+    font-size: 16px;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=number]:focus,
+.form-container input[type=date]:focus,
+.form-container select:focus {
+    background-color: #e8e8e8;
+    outline: none;
+    border-color: #2980b9;
+}
+
+.form-container .btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 24px); /* Adjusting the width */
+    margin: 10px 12px; /* Adjusting the margin */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+.form-container label{
+font-size: 12px;
+font-weight: bold;
+}
+.form-container .cancel {
+    background-color: #c0392b;
+    width: 100px;
+}
+
+.form-container .btn:hover,
+.form-container .cancel:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-wrapper {
+        max-width: 100%;
+    }
+}
+
+
+/* Grid container styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    height: 150px;
+}
+
+/* Grid items styling */
+.grid-item {
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.grid-item-red {
+    background-color: #e74c3c;
+}
+
+.grid-item-green {
+    background-color: #27ae60;
+}
+
+.grid-item-blue {
+    background-color: #3498db;
+}
+
+.grid-item-yellow {
+    background-color: #f1c40f;
+}
+
+.grid-item-purple {
+    background-color: #9b59b6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid-item {
+        font-size: 1em;
+    }
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 85%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    color: #fff;
+}
+.bg-green-500 {
+    background-color: #10b981;
+}
+.bg-red-500 {
+    background-color: #ef4444;
+}

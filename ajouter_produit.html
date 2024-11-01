@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Produit</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inclure SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome -->
+</head>
+<body>
+    <h1>Ajouter un Produit</h1>
+    <div class="header-buttons">
+        <button class="home-btn" onclick="window.location.href='index.php'">
+            <i class="fas fa-home"></i> Acceuil
+        </button>
+        <button class="mouvement-btn" onclick="window.location.href='mouvement_stock_ht.php'">
+            <i class="fas fa-exchange-alt"></i> Mouvement Stock
+        </button>
+        <button class="fournisseur-btn" onclick="window.location.href='fournisseur.php'">
+            <i class="fas fa-truck"></i> Fournisseurs
+        </button>
+        <button class="client-btn" onclick="window.location.href='client/clients.php'">
+            <i class="fas fa-users"></i> Clients
+        </button>
+        <button class="facture-btn" onclick="window.location.href='facture/gestion_document.php'">
+            <i class="fas fa-file-invoice"></i> Facture
+        </button>
+    </div>
+    <form id="ajouterProduitForm">
+        <div id="productRows">
+            <div class="product-row">
+                <div class="form-group">
+                    <label for="nom">Nom du produit:</label>
+                    <input type="text" id="nom" name="nom[]" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantite">Quantité:</label>
+                    <input type="number" id="quantite" name="quantite[]" required>
+                </div>
+                <button type="button" class="btn btn-danger" onclick="supprimerLigneProduit(this)"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+        <button type="button" id="add-pr" class="btn btn-success" onclick="ajouterLigneProduit()">Ajouter Produit</button>
+        <input type="submit" class="btn btn-primary" value="Enregistrer">
+    </form>
+
+    <!-- Inclure jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Inclure SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script type="text/javascript">
+        function ajouterLigneProduit() {
+            const productRows = document.getElementById('productRows');
+            const row = document.createElement('div');
+            row.classList.add('product-row');
+            row.innerHTML = `
+                <div class="form-group">
+                    <label for="nom">Nom du produit:</label>
+                    <input type="text" name="nom[]" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantite">Quantité:</label>
+                    <input type="number" name="quantite[]" required>
+                </div>
+                <button type="button" class="btn btn-danger" onclick="supprimerLigneProduit(this)"><i class="fas fa-trash-alt"></i></button>
+            `;
+            productRows.appendChild(row);
+        }
+
+        function supprimerLigneProduit(button) {
+            button.closest('.product-row').remove();
+        }
+
+        $(document).ready(function() {
+            $('#ajouterProduitForm').on('submit', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'ajouter_produit.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.status === 'error') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur',
+                                html: response.message
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Succès',
+                                text: response.message
+                            }).then(() => {
+                                location.reload();
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erreur',
+                            text: 'Une erreur s\'est produite lors de l\'ajout du produit.'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

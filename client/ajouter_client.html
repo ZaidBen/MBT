@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Client</title>
+    <link rel="stylesheet" href="styles-client.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome -->
+</head>
+
+<body>
+    <div class="container">
+        <a href="clients.php" class="back-link"><i class="fas fa-arrow-left"></i> Retour</a>
+        <h1>Ajouter un Nouveau Client</h1>
+        <form action="ajouter_client.php" method="POST">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="ice">ICE:</label>
+                <input type="text" id="ice" name="ice" >
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <textarea id="adresse" name="adresse" required></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Ajouter">
+        </form>
+    </div>
+</body>
+
+</html>

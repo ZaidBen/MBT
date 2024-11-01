@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+}
+
+p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 50px;
+    text-align: left;
+    color: #000000;
+}
+
+@media print {
+    body {
+        margin: 0;
+    }
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Adjust the proportions here */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.client-details {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.date-details {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.client-details p, .date-details p {
+    margin: 5px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.small-text {
+    font-size: 0.8em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header .logo {
+    flex: 1;
+}
+
+.header .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header .installation, .header .vente {
+    flex: 2;
+    text-align: center;
+}
+
+.header .installation ul, .header .vente ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header .installation ul li, .header .vente ul li {
+    margin-bottom: 5px;
+}
+
+.header .installation ul li::before, .header .vente ul li::before {
+    content: "- ";
+}
+
+.summary-row {
+    text-align: right;
+}
+.summary-row td {
+    text-align: left;
+    padding-right: 15px;
+    font-weight: bold;
+}
+.summary-row th, .summary-row td {
+    border-left: none !important;
+}
+
+.payment-status {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 60%;
+    margin-left: auto;
+
+}
+.payment-status th, .payment-status td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.payment-status th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.footerx {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.footerx .company-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(204, 74, 74);
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    background: white;
+}
+.footerx .line {
+    display: inline-block;
+    border-top: 2px solid rgb(204, 74, 74);
+    width: 300px;
+    margin: 0 5px;
+    position: relative;
+    top: -10px;
+}
+.footerx .details {
+    font-size: 0.9em;
+}
