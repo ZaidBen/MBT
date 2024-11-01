@@ -1,5 +1,5 @@
 # MBT
-Campany management system 
+Company management system 
 ![image](https://github.com/user-attachments/assets/d88ac524-a50f-4be3-a6c4-9d094bf6ec10)
 ![image](https://github.com/user-attachments/assets/29650c13-6264-43a4-8545-5f208bb73d14)
 ![image](https://github.com/user-attachments/assets/3359fd67-f303-4e73-a847-7978b66668c4)
